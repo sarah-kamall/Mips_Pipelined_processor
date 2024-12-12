@@ -14,7 +14,7 @@ This is an implementation of a five staged pipe-lined processor, as a part of Co
 ## Installation
 
 ## Docs
-check the  [design] (https://drive.google.com/file/d/1MArcDH0OHeN0Py6HnXPKBTKLQmv5ap55/view?usp=sharing)
+check the  [design](https://drive.google.com/file/d/1MArcDH0OHeN0Py6HnXPKBTKLQmv5ap55/view?usp=sharing)
 
 Please check the [project requirments](https://drive.google.com/file/d/1HDgNozBxp5MKYxWd6w-z8D7tO4FS0iX6/view?usp=drive_open)
 
