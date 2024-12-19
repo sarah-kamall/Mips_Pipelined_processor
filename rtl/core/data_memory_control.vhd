@@ -18,7 +18,7 @@ entity data_memory_control is
 
         -- data sources
         alu_result                  : in std_logic_vector(15 downto 0);
-        immediate                   : in std_logic_vector(15 downto 0);
+        pc                          : in std_logic_vector(15 downto 0);
         register_file_data          : in std_logic_vector(15 downto 0);
 
        -- output
@@ -31,11 +31,11 @@ architecture rtl of data_memory_control is
     constant ADDRESS_SOURCE_STACK_POINTER   : std_logic_vector(1 downto 0) := "00";
     constant ADDRESS_SOURCE_ADDRESS         : std_logic_vector(1 downto 0) := "01";
 
-    constant DATA_SOURCE_IMMEDIATE          : std_logic_vector(1 downto 0) := "00";
+    constant DATA_SOURCE_PC                 : std_logic_vector(1 downto 0) := "00";
     constant DATA_SOURCE_REGISTER_FILE      : std_logic_vector(1 downto 0) := "01";
     constant DATA_SOURCE_ALU_RESULT         : std_logic_vector(1 downto 0) := "10";
 begin
-    process(mem_address_source, mem_data_source, stack_pointer, address, alu_result, immediate, register_file_data)
+    process(mem_address_source, mem_data_source, stack_pointer, address, alu_result, pc, register_file_data)
     begin
         -- TODO: when integrating make sure to unify the mapping
 
@@ -49,8 +49,8 @@ begin
         end case;
 
         case mem_data_source is
-            when DATA_SOURCE_IMMEDIATE =>
-                mem_data <= immediate;
+            when DATA_SOURCE_PC =>
+                mem_data <= pc;
             when DATA_SOURCE_REGISTER_FILE =>
                 mem_data <= register_file_data;
             when DATA_SOURCE_ALU_RESULT =>
