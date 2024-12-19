@@ -23,3 +23,10 @@ Please check the [project requirments](https://drive.google.com/file/d/1HDgNozBx
 ### Schematic
 
 ## Features
+
+## Running simulation in batch mode
+
+```
+vsim -c -do sim/modelsim/<test>.do
+```
+
